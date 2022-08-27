@@ -9,9 +9,13 @@ a.out: mb.c
 	gcc mb.c -lm -O2
 
 run: Loop.mk LoopTargets
+ifneq ($(steps),1)
 	ffmpeg -framerate 20 -pattern_type glob -i '*.ppm' -c:v libx264 -pix_fmt yuv420p out.mp4
+else
+	ffmpeg -i *.ppm out.png
+endif
 
 .PHONY: clean
 clean:
-	rm -f a.out out.mp4 Loop.mk
+	rm -f a.out out.mp4 Loop.mk *.png
 	rm -f *.ppm
