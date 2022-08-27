@@ -1,6 +1,4 @@
 # Commands to start on workspace startup
 tasks:
-  - init: sudo apt update
-  - init: sudo apt install ffmpeg -y
-  - init: curl -s https://packagecloud.io/install/repositories/cs50/repo/script.deb.sh | sudo bash
+  - init: sudo apt update && sudo apt install ffmpeg -y && curl -s https://packagecloud.io/install/repositories/cs50/repo/script.deb.sh | sudo bash
     command: sudo apt install libcs50 -y
