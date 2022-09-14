@@ -1,6 +1,6 @@
 # Commands to start on workspace startup
 tasks:
-  - prebuild: sudo apt update && sudo apt install ffmpeg -y && curl -s https://packagecloud.io/install/repositories/cs50/repo/script.deb.sh | sudo bash && sudo apt install libcs50 -y
+  - before: sudo apt update && sudo apt install ffmpeg -y && curl -s https://packagecloud.io/install/repositories/cs50/repo/script.deb.sh | sudo bash && sudo apt install libcs50 -y
 vscode:
   extensions:
     - llvm-vs-code-extensions.vscode-clangd
